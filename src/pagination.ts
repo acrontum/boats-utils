@@ -11,9 +11,10 @@ type PaginationHelper = (options: PaginationOptions) => string;
 /**
  * Add default pagination to a models.yml file
  *
- * @param  {string|PaginationOptions} options           If options is a string, it is treated as options.path
- * @param  {string}                   options.path      The path to the data model
- * @param  {string}                   options.template  A template to render into data.items
+ * @param  {string|PaginationOptions} options                  If options is a string, it is treated as options.path
+ * @param  {string}                   options.path             The path to the data model
+ * @param  {string}                   options.template         A template to render into data.items
+ * @param  {string}                   options.paginationModel  Reference to another pagination model
  *
  * @return {string}
  */
