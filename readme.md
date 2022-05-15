@@ -522,7 +522,7 @@ properties:
 ```yaml
 # components/schemas/user/models.yml
 
-{{ pagination({ paginationMOdel: "#/components/schemas/Pagination" }) }}
+{{ pagination({ paginationModel: "#/components/schemas/Pagination" }) }}
 ```
 
 Would output:
