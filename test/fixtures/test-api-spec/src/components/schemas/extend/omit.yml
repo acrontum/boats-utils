@@ -1,0 +1,8 @@
+{{
+  extend('./model.yml', {
+    omit: [
+      'properties.id',
+      'properties.thisPropertyProbablyDoesntExist'
+    ]
+  })
+}}

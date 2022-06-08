@@ -10,10 +10,11 @@ cd "$(cd $(dirname $0) && pwd)/.."
 # lint or fail
 npm run lint
 
+# tests must pass
+npm run build:test
+npm test
+
 # must built
 npm run build
-
-# tests must pass
-# npm test
 
 echo -e '\033[32;1mpassed\033[0;0m'

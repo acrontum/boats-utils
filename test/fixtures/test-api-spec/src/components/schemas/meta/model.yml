@@ -1,0 +1,5 @@
+# default required for pagination
+type: object
+properties:
+  default:
+    type: boolean

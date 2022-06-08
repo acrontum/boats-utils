@@ -1,0 +1,12 @@
+{{
+  pagination({
+    template: '
+      # <- note that the indentation here must be 6 spaces
+      type: object
+      properties:
+        asdf:
+          type: number
+          format: uuid
+    '
+  })
+}}

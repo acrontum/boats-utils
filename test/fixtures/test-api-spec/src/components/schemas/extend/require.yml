@@ -1,0 +1,8 @@
+{{
+  extend('./model.yml', {
+    require: [
+      'properties.name',
+      'properties.codename'
+    ]
+  })
+}}

@@ -1,0 +1,19 @@
+{{
+  extend('./model.yml', {
+    omit: [
+      'properties.id',
+      'properties.thisPropertyProbablyDoesntExist'
+    ],
+    require: [
+      'properties.name',
+      'properties.codename'
+    ],
+    optional: [
+      'properties.deletedAt'
+    ],
+    include: [
+      ['properties.codename', { type: 'string' }],
+      ['properties.yml', { $ref: '#/components/schemas/Meta' }]
+    ]
+  })
+}}

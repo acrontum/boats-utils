@@ -4,6 +4,7 @@ module.exports = {
 
   // Which files to not lint
   ignorePatterns: [
+    'test/fixtures',
     'node_modules'
   ],
 
@@ -14,7 +15,7 @@ module.exports = {
     sourceType: 'module',
   },
 
-  plugins: [],
+  plugins: ["mocha"],
 
   // The base rules this project extends from
   extends: [
@@ -43,7 +44,8 @@ module.exports = {
     {
       files: ['**/*.spec.ts'],
       rules: {
-        'max-lines-per-function': 'off'
+        'max-lines-per-function': 'off',
+        "mocha/no-exclusive-tests": "error",
       },
     },
   ],
