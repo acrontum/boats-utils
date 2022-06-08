@@ -8,6 +8,8 @@
 *.seed
 *.tgz
 *.tsbuildinfo
+.boats
+.boatsrc
 .cache
 .docusaurus
 .dynamodb
@@ -36,8 +38,8 @@
 .vscode
 .vscode-test
 .vuepress/dist
-.yarn-integrity
 .yarn
+.yarn-integrity
 bower_components
 build
 coverage
