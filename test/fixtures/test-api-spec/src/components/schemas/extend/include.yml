@@ -1,0 +1,8 @@
+{{
+  extend('./model.yml', {
+    include: [
+      ['properties.codename', { type: 'string' }],
+      ['properties.yml', { $ref: '#/components/schemas/Meta' }]
+    ]
+  })
+}}

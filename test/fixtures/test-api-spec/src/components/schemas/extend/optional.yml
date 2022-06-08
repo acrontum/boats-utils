@@ -1,0 +1,8 @@
+{{
+  extend('./model.yml', {
+    optional: [
+      'properties.deletedAt',
+      'properties.notARealProperty'
+    ]
+  })
+}}

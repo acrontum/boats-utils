@@ -1,0 +1,5 @@
+type: object
+properties:
+  {{ databaseentry({ id: 'string' }) }}
+  key:
+    type: string
