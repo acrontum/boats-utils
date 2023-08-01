@@ -1,43 +1,12 @@
 import { expect } from 'chai';
-import { ChildProcess, exec } from 'child_process';
-import { promises as fs } from 'fs';
-import { relative, resolve } from 'path';
-
-interface AsyncProcess {
-  proc: ChildProcess;
-  promise: Promise<string>;
-  resolve: (stdout: string) => void;
-  reject: (err: any) => void;
-}
-
-const runCommand = (cmd: string): AsyncProcess => {
-  let resolve: AsyncProcess['resolve'];
-  let reject: AsyncProcess['reject'];
-
-  const promise = new Promise<string>((res, rej) => {
-    resolve = res;
-    reject = rej;
-  });
-
-  const proc = exec(cmd.trim(), (err, stdout) => (err ? reject(err) : resolve(stdout)));
-
-  return { proc, promise, resolve, reject };
-};
+import { relative } from 'path';
+import { boatsFixtureFolder } from './shared';
 
 describe(relative(process.cwd(), __filename), () => {
   let apiSpec: Record<string, any>;
 
   before(async () => {
-    await fs.rm(resolve('test/.boats'), { recursive: true, force: true });
-
-    await runCommand(`\
-      NODE_ENV=test node node_modules/boats/bin/cli.js \
-        -f dist/src \
-        -i test/fixtures/test-api-spec/src/index.yml \
-        -o test/.boats/api.json
-    `).promise;
-
-    apiSpec = require(resolve('test/.boats/api_0.json'));
+    apiSpec = await boatsFixtureFolder('test-api-spec');
 
     expect(apiSpec?.info?.version).equals('0');
     expect(apiSpec?.components?.schemas?.Meta).deep.equals({
