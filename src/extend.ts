@@ -124,6 +124,7 @@ const required = (model: Record<string, any>, key: string, isRequired: boolean):
 
     if (isRequired) {
       lastProp.required.push(last);
+      lastProp.required = [...new Set(lastProp.required).keys()];
     } else {
       const index = lastProp.required.indexOf(last);
       if (index > -1) {

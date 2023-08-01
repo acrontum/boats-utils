@@ -2,8 +2,7 @@
   extend('./model.yml', {
     require: [
       'properties.name',
-      'properties.codename',
-      'properties.deletedAt'
+      'properties.codename'
     ]
   })
 }}

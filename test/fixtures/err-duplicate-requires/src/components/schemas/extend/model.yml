@@ -1,0 +1,14 @@
+type: object
+required:
+  - deletedAt
+  - id
+  - name
+properties:
+  id:
+    type: string
+    format: uuid
+  deletedAt:
+    type: string
+    format: date-time
+  name:
+    type: string
