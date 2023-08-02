@@ -4,6 +4,7 @@ interface PaginationOptions {
   path?: string;
   template?: string;
   paginationModel?: string;
+  required?: string[];
 }
 
 type PaginationHelper = (options: PaginationOptions) => string;
@@ -15,6 +16,7 @@ type PaginationHelper = (options: PaginationOptions) => string;
  * @param  {string}                   options.path             The path to the data model
  * @param  {string}                   options.template         A template to render into data.items
  * @param  {string}                   options.paginationModel  Reference to another pagination model
+ * @param  {string}                   options.required         List of required fields (default is ['meta', 'data'])
  *
  * @return {string}
  */
@@ -32,9 +34,11 @@ const pagination =
     } else if (options?.template) {
       template = njk.renderString(options.template, {});
     }
+    const required = (options?.required || ['meta', 'data']).map((r) => `  - ${r}`).join('\n');
+    console.log({ required });
 
     return `\
-type: object
+type: object${required ? `\nrequired:\n${required}` : ''}
 properties:
   meta:
     $ref: "${options?.paginationModel || '#/components/schemas/Meta'}"
