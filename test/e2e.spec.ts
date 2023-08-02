@@ -44,6 +44,7 @@ describe(relative(process.cwd(), __filename), () => {
 
     expect(apiSpec.components.schemas.PaginationTestDefaultParams).deep.equals({
       type: 'object',
+      required: ['meta', 'data'],
       properties: {
         meta: {
           $ref: '#/components/schemas/Meta',
@@ -59,6 +60,7 @@ describe(relative(process.cwd(), __filename), () => {
 
     expect(apiSpec.components.schemas.PaginationTestPagination).deep.equals({
       type: 'object',
+      required: ['meta', 'data'],
       properties: {
         meta: {
           $ref: '#/components/schemas/PaginationAlt',
@@ -74,6 +76,7 @@ describe(relative(process.cwd(), __filename), () => {
 
     expect(apiSpec.components.schemas.PaginationTestPath).deep.equals({
       type: 'object',
+      required: ['meta', 'data'],
       properties: {
         meta: {
           $ref: '#/components/schemas/Meta',
@@ -89,6 +92,7 @@ describe(relative(process.cwd(), __filename), () => {
 
     expect(apiSpec.components.schemas.PaginationTestStringOptions).deep.equals({
       type: 'object',
+      required: ['meta', 'data'],
       properties: {
         meta: {
           $ref: '#/components/schemas/Meta',
@@ -104,6 +108,7 @@ describe(relative(process.cwd(), __filename), () => {
 
     expect(apiSpec.components.schemas.PaginationTestTemplate).deep.equals({
       type: 'object',
+      required: ['meta', 'data'],
       properties: {
         meta: {
           $ref: '#/components/schemas/Meta',
@@ -118,6 +123,37 @@ describe(relative(process.cwd(), __filename), () => {
                 format: 'uuid',
               },
             },
+          },
+        },
+      },
+    });
+
+    expect(apiSpec.components.schemas.PaginationTestRequired).deep.equals({
+      type: 'object',
+      required: ['meta'],
+      properties: {
+        meta: {
+          $ref: '#/components/schemas/Meta',
+        },
+        data: {
+          type: 'array',
+          items: {
+            $ref: '#/components/schemas/Pagination',
+          },
+        },
+      },
+    });
+
+    expect(apiSpec.components.schemas.PaginationTestRequiredNone).deep.equals({
+      type: 'object',
+      properties: {
+        meta: {
+          $ref: '#/components/schemas/Meta',
+        },
+        data: {
+          type: 'array',
+          items: {
+            $ref: '#/components/schemas/Pagination',
           },
         },
       },
