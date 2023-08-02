@@ -458,6 +458,9 @@ properties:
 Would output:
 ```yaml
 type: object
+required:
+  - meta
+  - data
 properties:
   meta:
     $ref: "#/components/schemas/Meta"
@@ -495,6 +498,9 @@ or simply
 Would output:
 ```yaml
 type: object
+required:
+  - meta
+  - data
 properties:
   meta:
     $ref: "#/components/schemas/Meta"
@@ -523,6 +529,62 @@ properties:
 # components/schemas/user/models.yml
 
 {{ pagination({ paginationModel: "#/components/schemas/Pagination" }) }}
+```
+
+Would output:
+```yaml
+type: object
+required:
+  - meta
+  - data
+properties:
+  meta:
+    $ref: "#/components/schemas/Pagination"
+  data:
+    type: array
+    items: 
+      $ref: "./model.yml"
+```
+
+---
+
+To alter or remove required fields:
+
+```yaml
+# components/schemas/user/singleUserResponse.yml
+
+type: object
+properties:
+  name:
+    type: string
+  numberOfDogs:
+    type: number
+```
+
+```yaml
+# components/schemas/user/models.yml
+
+{{ pagination({ required: ['meta'] }) }}
+```
+
+Would output:
+```yaml
+type: object
+required:
+  - meta
+properties:
+  meta:
+    $ref: "#/components/schemas/Pagination"
+  data:
+    type: array
+    items: 
+      $ref: "./model.yml"
+```
+
+```yaml
+# components/schemas/user/models.yml
+
+{{ pagination({ required: [] }) }}
 ```
 
 Would output:
