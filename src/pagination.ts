@@ -35,7 +35,6 @@ const pagination =
       template = njk.renderString(options.template, {});
     }
     const required = (options?.required || ['meta', 'data']).map((r) => `  - ${r}`).join('\n');
-    console.log({ required });
 
     return `\
 type: object${required ? `\nrequired:\n${required}` : ''}

@@ -29,6 +29,7 @@ module.exports = {
     'curly': ['error', 'all'],
     'quotes': ['error', 'single', { avoidEscape: true }],
     'max-lines-per-function': ['error', 60],
+    "no-console": ["error", { "allow": ["warn", "error", "info"] }],
 
     // Typescript overrides
     // '@typescript-eslint/no-empty-function': 'off',
