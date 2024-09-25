@@ -15,4 +15,6 @@ npm run lint
 # tests must pass
 npm test
 
+npm run build
+
 echo -e '\033[32;1mpassed\033[0;0m'
