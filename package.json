@@ -45,8 +45,5 @@
     "url": "https://github.com/acrontum/boats-utils/issues"
   },
   "homepage": "https://github.com/acrontum/boats-utils#readme",
-  "files": [
-    "dist/src/**/*.js",
-    "dist/types/src/**/*.d.ts"
-  ]
+  "files": ["dist/**/*.js"]
 }

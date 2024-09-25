@@ -7,7 +7,7 @@ set -o pipefail
 # cd to script folder then up 1 dir
 cd "$(cd $(dirname $0) && pwd)/.."
 
-npm run build
+npm run build -- -p tsconfig.test.json
 
 # lint or fail
 npm run lint
