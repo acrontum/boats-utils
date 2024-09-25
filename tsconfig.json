@@ -2,12 +2,10 @@
   "extends": "@tsconfig/node12/tsconfig.json",
   "compilerOptions": {
     "noImplicitAny": true,
-    "declaration": true,
-    "declarationDir": "dist/types",
     "outDir": "./dist",
     "removeComments": true,
-    "sourceMap": true,
-    "strictNullChecks": true
+    "sourceMap": false,
+    "strictNullChecks": false
   },
-  "include": ["src", "test"]
+  "include": ["src"]
 }
