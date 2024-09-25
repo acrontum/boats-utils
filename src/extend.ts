@@ -76,7 +76,7 @@ interface ExtendOptions {
 interface ContainerObject {
   item: Record<string, any>;
   last: string;
-  lastProp: Record<string, any>;
+  lastProp: Record<string, any> | null;
 }
 
 const getContainerObj = (model: Record<string, any>, key: string): ContainerObject => {
@@ -140,7 +140,7 @@ const required = (model: Record<string, any>, key: string, isRequired: boolean):
   return model;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+// eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-unused-vars, @typescript-eslint/no-require-imports
 const { default: Template } = require(`${process.cwd()}/node_modules/boats/build/src/Template`);
 
 // have to use function here to extract the 'this' scope from the helper loader

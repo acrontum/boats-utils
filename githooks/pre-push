@@ -7,14 +7,12 @@ set -o pipefail
 # cd to script folder then up 1 dir
 cd "$(cd $(dirname $0) && pwd)/.."
 
+npm run build
+
 # lint or fail
 npm run lint
 
 # tests must pass
-npm run build:test
 npm test
-
-# must built
-npm run build
 
 echo -e '\033[32;1mpassed\033[0;0m'
