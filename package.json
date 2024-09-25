@@ -2,7 +2,6 @@
   "name": "@acrontum/boats-utils",
   "version": "2.0.2",
   "description": "Collection of useful boats template helpers.",
-  "main": "dist/src",
   "scripts": {
     "prebuild": "rm -rf dist/*",
     "build": "tsc",
@@ -48,6 +47,6 @@
   "homepage": "https://github.com/acrontum/boats-utils#readme",
   "files": [
     "dist/src/**/*.js",
-    "dist/src/**/*.d.ts"
+    "dist/types/src/**/*.d.ts"
   ]
 }
