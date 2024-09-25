@@ -41,6 +41,7 @@ const databaseEntry = (params?: DatabaseOptions): string => {
   deletedAt:
     type: string
     format: date-time
+    nullable: true
   `
       : ''
   }
