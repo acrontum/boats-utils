@@ -1,6 +1,6 @@
 {
   "name": "@acrontum/boats-utils",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Collection of useful boats template helpers.",
   "main": "dist/src",
   "scripts": {
