@@ -374,6 +374,7 @@ describe(relative(process.cwd(), __filename), () => {
         deletedAt: {
           type: 'string',
           format: 'date-time',
+          nullable: true,
         },
         key: {
           type: 'string',
